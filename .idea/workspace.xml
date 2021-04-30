@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcffc3fa-12c8-47e0-967a-bd4d9f422ec1" name="Default Changelist" comment="" />
+    <list default="true" id="fcffc3fa-12c8-47e0-967a-bd4d9f422ec1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/java/org/mg/exerciceSpringMatthieuGRANDIERES/ExerciceSpringMatthieuGrandieresApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/java/org/mg/exerciceSpringMatthieuGRANDIERES/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/java/org/mg/exerciceSpringMatthieuGRANDIERES/controller/VueController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/java/org/mg/exerciceSpringMatthieuGRANDIERES/entity/Communes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/java/org/mg/exerciceSpringMatthieuGRANDIERES/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/java/org/mg/exerciceSpringMatthieuGRANDIERES/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view-id.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/test/java/org/mg/exerciceSpringMatthieuGRANDIERES/ExerciceSpringMatthieuGrandieresApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/team/vert/order/configuration" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -86,5 +107,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
