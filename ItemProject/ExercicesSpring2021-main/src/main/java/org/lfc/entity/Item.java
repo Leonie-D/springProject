@@ -49,6 +49,10 @@ public class Item {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getRegionName() {
 		// TODO Auto-generated method stub
 		return regionName;
