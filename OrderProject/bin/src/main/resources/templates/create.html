@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nouvelle commande</title>
+</head>
+<body>
+
+    <h1>Créer une nouvelle commande</h1>
+
+    <form action="#" th:action="@{/create}" th:method="post" th:object="${order}">
+        <label for="customer">Client</label>
+        <input id="customer" name="customer" type="text" th:value="${user}" th:field="*{customer}" disabled/>
+
+        <label for="name">Nom de la commande</label>
+        <input id="name" name="name" type="text" placeholder="Nom de la commande" th:field="*{name}"/>
+
+        <label for="items">Client</label>
+        <select name="items" id="items" multiple th:each ="item : ${items}">
+            <option th:value="${item.id}" th:utext="${item.name}"></option>
+        </select>
+        <input type="submit" value="Ajouter"/>
+    </form>
+
+</body>
+</html>
