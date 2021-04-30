@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fcffc3fa-12c8-47e0-967a-bd4d9f422ec1" name="Default Changelist" comment="">
+    <list default="true" id="fcffc3fa-12c8-47e0-967a-bd4d9f422ec1" name="Default Changelist" comment="User in progress">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +42,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/UserProject" />
       <recent name="$PROJECT_DIR$/src/main/java/team/vert/order/configuration" />
     </key>
   </component>
@@ -74,6 +79,14 @@
       <workItem from="1619721820396" duration="1649000" />
       <workItem from="1619765540816" duration="768000" />
     </task>
+    <task id="LOCAL-00001" summary="User in progress">
+      <created>1619771019434</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619771019434</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,5 +103,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="User in progress" />
+    <option name="LAST_COMMIT_MESSAGE" value="User in progress" />
   </component>
 </project>

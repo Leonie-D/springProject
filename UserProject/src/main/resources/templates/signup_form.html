@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <div>
+        <h1>Sign Up</h1>
+    </div>
+    <form th:action="@{/process_register}" th:object="${user}"
+          method="post" style="max-width: 600px; margin: 0 auto;">
+        <div>
+            <div>
+                <label>Name: </label>
+                <div>
+                    <input type="name" th:field="*{name}" required />
+                </div>
+            </div>
+
+            <div>
+                <label>Password: </label>
+                <div>
+                    <input type="password" th:field="*{password}"
+                           required minlength="6" maxlength="10"/>
+                </div>
+            </div>
+            <div>
+                <button type="submit">Sign Up</button>
+            </div>
+        </div>
+    </form>
+
+</html>

@@ -26,6 +26,16 @@ public class User {
     @Column
     private String departmentCode;
 
+    @Column
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getDepartmentCode() {
         return departmentCode;
@@ -55,6 +65,7 @@ public class User {
     public User() {
         this.name = name;
         this.zipCode = zipCode;
+        this.password = password;
     }
 
     public int getId() {
