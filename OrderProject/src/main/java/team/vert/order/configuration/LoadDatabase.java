@@ -48,15 +48,9 @@ public class LoadDatabase implements ApplicationRunner {
         orderRepository.save(order);
 
         // importer les items
-        /*Item[] items = orderService.getItemsList();
-        for(int i = 0; i < items.length; i++) {
-            itemRepository.save(items[i]);
-        }*/
+        Item[] items = orderService.getItemsList();
 
         // importer les customers
-        /*Customer[] customers = orderService.getCustomersList();
-        for(int i = 0; i < customers.length; i++) {
-            customerRepository.save(customers[i]);
-        }*/
+        Customer[] customers = orderService.getCustomersList();
     }
 }

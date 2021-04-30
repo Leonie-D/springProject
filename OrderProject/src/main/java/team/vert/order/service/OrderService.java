@@ -60,7 +60,7 @@ public class OrderService {
 
     public Customer[] getCustomersList() throws NotFoundException {
         String resourceUrl
-                = "http://localhost:8080"; // TODO update
+                = "http://localhost:8083/user";
         ResponseEntity<Customer[]> response
                 = restTemplate.getForEntity(resourceUrl, Customer[].class);
         if(response.getBody() != null) {

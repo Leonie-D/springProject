@@ -24,7 +24,7 @@ public class Order {
     @ManyToOne
     private Customer customer;
 
-    @OneToMany
+    @ManyToMany
     private List<Item> items = new ArrayList<>();
 
     public void addItem(Item item) {
