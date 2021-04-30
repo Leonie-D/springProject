@@ -1,23 +1,114 @@
-<html xmlns:th="http://www.thymeleaf.org">
-   <h1>Liste des items</h1>
-   <table th:if="${!items.isEmpty()}">
-      <tr>
-         <th>Item Id</th>
-         <th>Item Nom</th>
-      </tr>
-      <tr th:each ="item : ${items}">
-         <td style="display:none;" th:utext=" ${item.id} ">  </td>
-         <td th:utext=" ${item.id} ">  </td>
-         <td th:utext=" ${item.name} ">  </td>
-      </tr>
-   </table>
+
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<h1>Liste des items</h1>
+
+  
+   <form  method="POST">
+        <label>
+            Nom :
+            <input type="text" />
+        </label>
+        <button type="submit" id="Ajouter">Ajouter</button>
+    </form>
+  
+
+    <ul th:if="${items != null && !items.isEmpty()}">
+        <li th:each="item: ${items}">
+            <h2 th:text='${"Id : "+item.id}'></h2>
+            <h2 th:text='${"Nom : "+item.name}'></h2>
+            <form method="DELETE">
+                <button type="submit" id="Supprimer">Supprimer</button>
+            </form>
+        </li>
+    </ul>
+
+
    <style>
-     table, th, td {
-		border: 1px solid black;
-		padding: 10px ;
-	}
-	table{
-		border-collapse: collapse;
-	}
+        h2 {
+            border: 1px solid black;
+            padding: 10px ;
+            border-collapse: collapse;
+        }
+
+        h1 {
+            position: relative;
+            margin: 15px auto;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: max-content;
+
+            background-color: #f2f2f2;
+            color: black;
+        }
+
+        form {
+            position: relative;
+            margin: auto;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: stretch;
+            align-items: flex-start;
+
+            width: max-content;
+
+            padding: 10px;
+
+            border: 3px dashed black;
+            border-radius: 2px;
+        }
+
+        form > input[type="submit"] {
+            align-self: flex-end;
+            margin-top: auto;
+            cursor: pointer;
+        }
+
+        form > label {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            padding: 2px;
+
+        }
+
+        form > label > input {
+            margin-left: 2px;
+            flex: 1 1 auto;
+        }
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: center;
+
+            padding: 4px;
+            border-radius: 2px;
+            border-top: 2px solid black;;
+            list-style: none;
+        }
+
+        ul > li {
+            border: 5px solid black;
+            border-radius: 10px;
+            padding: 5px;
+            margin: 5px;
+
+        }
+
+        ul > li > form {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul > li > form > button {
+            cursor: pointer;
+        }
+
    </style>
+
 </html>

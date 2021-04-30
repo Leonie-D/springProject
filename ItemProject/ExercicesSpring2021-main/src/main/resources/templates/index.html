@@ -1,1 +1,47 @@
-<h1>Hello Cefim test</h1>
+<html xmlns:th="http://www.thymeleaf.org">
+   <h1>Liste des items</h1>
+   <table th:if="${!items.isEmpty()}">
+      <tr>
+         <th>Item Id</th>
+         <th>Item Nom</th>
+      </tr>
+      <tr th:each ="item : ${items}">
+         <td style="display:none;" th:utext=" ${item.id} ">  </td>
+         <td th:utext=" ${item.id} ">  </td>
+         <td th:utext=" ${item.name} ">  </td>
+      </tr>
+   </table>
+   <style>
+     table, th, td {
+		border: 1px solid black;
+		padding: 10px ;
+	}
+	table{
+		border-collapse: collapse;
+	}
+   </style>
+
+<h1>Items</h1>
+
+<form th:action="@{/additem}"
+      th:object="${item}"
+      method="POST">
+    <label>
+        Nom :
+        <input type="text" th:field="*{name}" />
+    </label>
+    <input type="submit" value="Ajouter" />
+</form>
+
+<ul th:if="${items != null && !items.isEmpty()}">
+    <li th:each="item: ${items}">
+        <a th:href="@{'/itemsview/'+${item.id}}">
+            <h2 th:text='${"Nom : "+item.name}'></h2>
+        </a>
+        <form action="#" th:action="@{'/deleteitem/{id}'(id=${item.id})}" th:method="delete">
+            <button type="submit" id="Supprimer">Supprimer</button>
+        </form>
+    </li>
+</ul>
+
+</html>
