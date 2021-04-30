@@ -16,7 +16,7 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @Column
     private String name;
