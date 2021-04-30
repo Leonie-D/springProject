@@ -6,7 +6,24 @@
 </head>
 <body>
 
-    <a th:href="@{/create}">Passer une nouvelle commande</a>
+    <a th:href="@{/create}"><button>Passer une nouvelle commande</button></a>
+
+    <hr/>
+    <h2>Toutes vos commandes</h2>
+    <table th:if="${!orders.isEmpty()}">
+        <tr>
+            <th>Nom</th>
+            <th>Articles</th>
+        </tr>
+        <tr th:each ="order : ${orders}">
+            <td><a th:href="@{/show/{id}(id=${order.id})}" th:utext="${order.name}"></a></td>
+            <td>
+                <ul th:each="items : ${order.items}">
+                    <li th:utext="${item.name}"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
 
 </body>
 </html>

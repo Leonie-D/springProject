@@ -4,26 +4,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import team.vert.order.dto.ItemDTO;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import team.vert.order.entity.Item;
 import team.vert.order.entity.Order;
 import team.vert.order.service.OrderService;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class ViewController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping(path = "/home")
-    public String index(Model model) {
+    @GetMapping(path = "{userId}/home")
+    public String index(Model model, @PathVariable Long userId) {
+        List<Order> orders = orderService.getOrdersByCustomer(userId);
+        model.addAttribute("orders", orders);
         return "home";
     }
 
     @GetMapping(path = "/new-order")
-    public String create(Model model) {
+    public String newOrderForm(Model model) {
         model.addAttribute("user", "truc"); // TODO
-        ItemDTO[] items = orderService.getItemsList();
+        List<Item> items = Arrays.asList(orderService.getItemsList());
         model.addAttribute("items", items);
         model.addAttribute("order", new Order());
-        return "create";
+        return "newOrder";
+    }
+
+    @PostMapping(path = "/create")
+    public String create(@ModelAttribute Order order) {
+        return "redirect:/home";
     }
 }

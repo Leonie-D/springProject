@@ -9,14 +9,14 @@ import javax.persistence.*;
 @Entity
 @Table
 @NoArgsConstructor
-public class Customer {
+public class Item {
     @Id
     private int id;
 
     @Column
     private String name;
 
-    public Customer(int id, String name) {
+    public Item(int id, String name) {
         this.id = id;
         this.name = name;
     }
