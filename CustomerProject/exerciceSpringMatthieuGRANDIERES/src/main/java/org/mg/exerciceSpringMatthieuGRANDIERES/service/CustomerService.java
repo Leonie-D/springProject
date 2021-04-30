@@ -13,10 +13,10 @@ public class CustomerService {
     private List<Customer> customersArray = new ArrayList<>();
 
     public CustomerService(){
-        customersArray.add(new Customer(1, "Matthieu"));
-        customersArray.add(new Customer(2, "Buzz"));
-        customersArray.add(new Customer(3, "Woodie"));
-        customersArray.add(new Customer(4, "Michel"));
+        customersArray.add(new Customer(1, "customer"));
+        customersArray.add(new Customer(2, "customer"));
+        customersArray.add(new Customer(3, "customer"));
+        customersArray.add(new Customer(4, "customer"));
     }
 
     public List<Customer> getAllCustomer(){
