@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import team.vert.order.dao.OrderRepository;
+import team.vert.order.entity.Customer;
 import team.vert.order.entity.Item;
 import team.vert.order.entity.Order;
 
@@ -27,6 +28,14 @@ public class OrderService {
             = "http://localhost:8081"; // TODO update
         ResponseEntity<Item[]> response
                 = restTemplate.getForEntity(resourceUrl, Item[].class);
+        return response.getBody();
+    }
+
+    public Customer[] getCustomersList() {
+        String resourceUrl
+                = "http://localhost:8080"; // TODO update
+        ResponseEntity<Customer[]> response
+                = restTemplate.getForEntity(resourceUrl, Customer[].class);
         return response.getBody();
     }
 }

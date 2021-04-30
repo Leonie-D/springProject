@@ -21,9 +21,13 @@ public class Order {
     @Column
     private String name;
 
-    @Column
-    private Long customerId;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Customer customer;
 
-    @OneToMany
-    private List<Item> items;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Item> items = new ArrayList<>();
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
 }
