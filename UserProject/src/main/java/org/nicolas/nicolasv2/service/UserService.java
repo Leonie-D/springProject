@@ -49,15 +49,15 @@ public class UserService {
         user.setCity(findCity(user.getZipCode()));
         user.setDepartmentCode(findDept(user.getZipCode()));
         user.setPassword(user.getPassword());
-        success();
+        //success();
         return userRepo.save(user);
         //return "register_success";                        A FINIR ><
     }
 
     //test
-    public String success() {
+/*    public String success() {
         return "register_success";
-    }
+    }*/
 
 
 /*    public long deleteUser(int id) {
