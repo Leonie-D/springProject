@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -49,9 +48,16 @@ public class UserService {
     public User addUser(User user) {
         user.setCity(findCity(user.getZipCode()));
         user.setDepartmentCode(findDept(user.getZipCode()));
+        user.setPassword(user.getPassword());
+        //success();
         return userRepo.save(user);
+        //return "register_success";                        A FINIR ><
     }
 
+    //test
+/*    public String success() {
+        return "register_success";
+    }*/
 
 
 /*    public long deleteUser(int id) {
@@ -138,6 +144,7 @@ public class UserService {
                 return foundUser;
         }).orElseThrow(() -> new NotFoundException("L'objet n'existe pas"));
     }
+
 
 
 

@@ -16,11 +16,18 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     @Column
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Customer customer;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Item> items = new ArrayList<>();
+
+    public void addItem(Item item) {
+        items.add(item);
+    }
 }

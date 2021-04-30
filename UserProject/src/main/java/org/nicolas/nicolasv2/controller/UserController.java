@@ -40,9 +40,28 @@ public class UserController {
 
 
 
+
     @PutMapping
     public User updateUser(@RequestBody User user) throws NotFoundException {
         return userService.updateUser(user);
     }
+
+
+    @PostMapping("/process_register")
+    public User processRegister(@RequestBody User user) {
+        return userService.addUser(user);
+
+/*        String password = user.getPassword();
+        user.setPassword(password);
+
+        UserService.save(user);
+
+        return "register_success";*/
+    }
+
+/*    @PostMapping
+    public User addUser(@RequestBody User user) {
+        return userService.addUser(user);
+    }*/
 
 }
