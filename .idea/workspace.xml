@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fcffc3fa-12c8-47e0-967a-bd4d9f422ec1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES" />
   </component>
   <component name="ProjectId" id="1rr6MoYbAbllYmtIDDt8I2sOyf9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
