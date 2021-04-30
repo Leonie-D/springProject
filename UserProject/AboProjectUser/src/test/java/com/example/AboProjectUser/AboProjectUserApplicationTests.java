@@ -1,10 +1,10 @@
-package com.example.Abo;
+package com.example.AboProjectUser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AboApplicationTests {
+class AboProjectUserApplicationTests {
 
 	@Test
 	void contextLoads() {

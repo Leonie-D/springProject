@@ -1,13 +1,13 @@
-package com.example.Abo;
+package com.example.AboProjectUser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AboApplication {
+public class AboProjectUserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AboApplication.class, args);
+		SpringApplication.run(AboProjectUserApplication.class, args);
 	}
 
 }
