@@ -4,8 +4,6 @@ import org.nicolas.nicolasv2.NotFoundException;
 import org.nicolas.nicolasv2.entity.User;
 import org.nicolas.nicolasv2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -47,17 +45,21 @@ public class UserController {
     }
 
 
-    @PostMapping("/process_register")
+/*    @PostMapping("/process_register")
     public User processRegister(@RequestBody User user) {
-        return userService.addUser(user);
+*//*        userService.addUser(user);
+        return "register_success";*//*
 
-/*        String password = user.getPassword();
+*//*        String password = user.getPassword();
         user.setPassword(password);
 
         UserService.save(user);
 
-        return "register_success";*/
-    }
+        return "register_success";*//*
+
+
+        return        userService.addUser(user);
+    }*/
 
 /*    @PostMapping
     public User addUser(@RequestBody User user) {

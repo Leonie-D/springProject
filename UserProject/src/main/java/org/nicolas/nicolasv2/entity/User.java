@@ -63,9 +63,6 @@ public class User {
     }
 
     public User() {
-        this.name = name;
-        this.zipCode = zipCode;
-        this.password = password;
     }
 
     public int getId() {
