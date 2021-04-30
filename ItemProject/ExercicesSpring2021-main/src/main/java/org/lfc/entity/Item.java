@@ -1,25 +1,57 @@
 package org.lfc.entity;
 
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class Item {
-	
-	protected @Id @GeneratedValue Long id;
 
-	protected String name;
+    @GeneratedValue
+    @Id
+    private Long id;
 
-	public Item(String name)
-	{
+    @Column
+    private String name;
+
+    @Column
+    private String regionCode;
+
+    @Column
+    private String regionName;
+
+
+	public Item(Long id, String name, String regionCode, String regionName) {
+		this.id = id ;
 		this.name = name;
+        this.regionCode = regionCode;
+        this.regionName = regionName;
+	}
 
+	public Item(String name2, String regionCode2, String regionName2) {
+		this.name = name2;
+        this.regionCode = regionCode2;
+        this.regionName = regionName2;
+	}
+
+	public Item(String name3) {
+		this.name = name3;
+	}
+
+	public String getRegionCode() {
+		// TODO Auto-generated method stub
+		return regionCode;
 	}
 
 	public Long getId() {
@@ -27,17 +59,14 @@ public class Item {
 		return id;
 	}
 
-	public void setId(Long id) {
-		// TODO Auto-generated method stub
-		this.id = id ;
-	}
-	
 	public String getName() {
-		return name ;
+		// TODO Auto-generated method stub
+		return name;
 	}
 
-	public void setName(String name) {
+	public String getRegionName() {
 		// TODO Auto-generated method stub
-		this.name = name ;
+		return regionName;
 	}
+
 }

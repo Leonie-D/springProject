@@ -1,4 +1,4 @@
-package controller;
+package org.lfc.controller;
 
 import org.lfc.dto.GeoDto;
 import org.lfc.service.GeoService;

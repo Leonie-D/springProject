@@ -1,64 +1,96 @@
 package org.lfc.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import org.lfc.dao.ItemRepository;
 import org.lfc.entity.Item;
+import org.lfc.exception.APIException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import org.apache.logging.log4j.util.Strings;
 
 @Service
 public class ItemService {
-	ArrayList<Item> itemList = new ArrayList<>();
 
-	public Item add(String name)
-	{
-		Item item = new Item(name);
-		int size = this.itemList.size();
-		if (size > 0)
-			item.setId(Long.valueOf(this.itemList.get(size - 1).getId().intValue() + 1));
-		else
-			item.setId(Long.valueOf(0));
-		this.itemList.add(item);
-		return item;
-	}
+		@Autowired
+	    private ItemRepository itemDAO;
 
-	public Item delete(Long id)
-	{
-		int size = this.itemList.size();
-		for (int i = 0; i < size; i++)
-			if (this.itemList.get(i).getId() == id)
-				return itemList.remove(i);
-		return null;
-	}
 
-	public Item put(Long id, String name)
-	{
-		int size = this.itemList.size();
-		for (int i = 0; i < size; i++)
-		{
-			Item item = this.itemList.get(i);
-			if (item.getId() == id)
-			{
-				item.setName(name);
-				return item;
-			}
-		}
-		return null;
-	}
+	    public List<Item> getAll() {
 
-	public Item get(Long id)
-	{
-		int size = this.itemList.size();
-		for (int i = 0; i < size; i++)
-		{
-			Item item = this.itemList.get(i);
-			if (item.getId() == id)
-				return item;
-		}
-		return null;
-	}
+	        return itemDAO.findAll();
+	    }
 
-	public ArrayList<Item> getAll()
-	{
-		return itemList;
-	}
+	    public Item get(String id) throws APIException {
+	        return entityToDto(getItem(id));
+	    }
+
+	    public Item create(Item item) throws APIException {
+	        if (!isItemValid(item)) throw new APIException("Item invalid", HttpStatus.BAD_REQUEST);
+
+	        final Item item2 = dtoToEntityNoId(item);
+
+	        itemDAO.save(item2);
+
+	        return entityToDto(item2);
+	    }
+
+	    public Item update(Item item) throws APIException {
+
+	        if (!isItemValid(item)) throw new APIException("Update item invalid", HttpStatus.BAD_REQUEST);
+
+	        final long itemId = item.getId();
+
+	        itemDAO.findById(itemId).orElseThrow(
+	                () -> new APIException("Item not found", HttpStatus.NOT_FOUND)
+	        );
+
+	        Item item3 = itemDAO.save(dtoToEntity(item));
+
+	        return entityToDto(item3);
+	    }
+
+
+	    public Long delete(String id) throws APIException {
+
+	        final Item item = getItem(id);
+
+	        itemDAO.delete(item);
+
+	        return item.getId();
+	    }
+
+	    private Item entityToDto(Item item) {
+	        return new Item(item.getId(), item.getName(), item.getRegionCode(), item.getRegionName());
+	    }
+
+	    private Item dtoToEntity(Item item) {
+	        return new Item(item.getId(), item.getName(), item.getRegionCode(), item.getRegionName());
+	    }
+
+	    private Item dtoToEntityNoId(Item item) {
+	        return new Item(item.getName(), item.getRegionCode(), item.getRegionName());
+	    }
+
+	    private boolean isItemValid(Item item) {
+	        return item != null
+	                && !Strings.isBlank(item.getName())
+	                && !Strings.isBlank(item.getRegionCode());
+	    }
+
+	    private Item getItem(String id) throws APIException {
+	        long itemId;
+
+	        try {
+	            itemId = Long.parseLong(id);
+
+	        } catch (NumberFormatException e) {
+	            throw new APIException("Item invalid", HttpStatus.BAD_REQUEST);
+	        }
+
+	        return itemDAO.findById(itemId).orElseThrow(() -> new APIException("Item not found", HttpStatus.NOT_FOUND));
+	    }
 }

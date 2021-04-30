@@ -1,4 +1,25 @@
-<h1>
-	View
-	<span th:text="${helloKey}" />
-</h1>
+<html xmlns:th="http://www.thymeleaf.org">
+   <h1>Liste des sujets en base</h1>
+   <table th:if="${!items.isEmpty()}">
+      <tr>
+         <th>UUID</th>
+         <th>Nom</th>
+         <th>Code postal</th>
+      </tr>
+      <tr th:each ="item : ${items}">
+         <td style="display:none;" th:utext=" ${item.id} ">  </td>
+         <td th:utext=" ${item.id} ">  </td>
+         <td th:utext=" ${item.name} ">  </td>
+         <td th:utext=" ${item.departementCode} ">  </td>
+      </tr>
+   </table>
+   <style>
+     table, th, td {
+		border: 1px solid black;
+		padding: 10px ;
+	}
+	table{
+		border-collapse: collapse;
+	}
+   </style>
+</html>
