@@ -1,16 +1,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
-   <h1>Liste des sujets en base</h1>
+   <h1>Liste des items</h1>
    <table th:if="${!items.isEmpty()}">
       <tr>
-         <th>UUID</th>
-         <th>Nom</th>
-         <th>Code postal</th>
+         <th>Item Id</th>
+         <th>Item Nom</th>
       </tr>
       <tr th:each ="item : ${items}">
          <td style="display:none;" th:utext=" ${item.id} ">  </td>
          <td th:utext=" ${item.id} ">  </td>
          <td th:utext=" ${item.name} ">  </td>
-         <td th:utext=" ${item.departementCode} ">  </td>
       </tr>
    </table>
    <style>

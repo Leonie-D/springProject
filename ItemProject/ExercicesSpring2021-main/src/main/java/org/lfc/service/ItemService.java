@@ -1,6 +1,5 @@
 package org.lfc.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.lfc.dao.ItemRepository;
@@ -64,21 +63,20 @@ public class ItemService {
 	    }
 
 	    private Item entityToDto(Item item) {
-	        return new Item(item.getId(), item.getName(), item.getRegionCode(), item.getRegionName());
+	        return new Item(item.getId(), item.getName());
 	    }
 
 	    private Item dtoToEntity(Item item) {
-	        return new Item(item.getId(), item.getName(), item.getRegionCode(), item.getRegionName());
+	        return new Item(item.getId(), item.getName());
 	    }
 
 	    private Item dtoToEntityNoId(Item item) {
-	        return new Item(item.getName(), item.getRegionCode(), item.getRegionName());
+	        return new Item(item.getName());
 	    }
 
 	    private boolean isItemValid(Item item) {
 	        return item != null
-	                && !Strings.isBlank(item.getName())
-	                && !Strings.isBlank(item.getRegionCode());
+	                && !Strings.isBlank(item.getName());
 	    }
 
 	    private Item getItem(String id) throws APIException {

@@ -6,16 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 public class Item {
 
     @GeneratedValue
@@ -31,22 +25,13 @@ public class Item {
     @Column
     private String regionName;
 
-
-	public Item(Long id, String name, String regionCode, String regionName) {
+	public Item(Long id, String name) {
 		this.id = id ;
 		this.name = name;
-        this.regionCode = regionCode;
-        this.regionName = regionName;
 	}
 
-	public Item(String name2, String regionCode2, String regionName2) {
-		this.name = name2;
-        this.regionCode = regionCode2;
-        this.regionName = regionName2;
-	}
-
-	public Item(String name3) {
-		this.name = name3;
+	public Item(String name) {
+		this.name = name;
 	}
 
 	public String getRegionCode() {
