@@ -12,9 +12,9 @@
         <label for="name">Nom de la commande</label>
         <input id="name" name="name" type="text" placeholder="Nom de la commande" th:field="*{name}"/>
 
-        <label for="items">Client</label>
-        <select name="items" id="items" multiple>
-            <option th:each="item : ${items}" th:value="${item}" th:utext="${item.name}"></option>
+        <label for="items">Articles</label>
+        <select name="items" id="items" multiple th:field="*{items}">
+            <option th:each="item : ${items}" th:value="${{item}}" th:utext="${item.name}"></option>
         </select>
         <input type="submit" value="Ajouter"/>
     </form>

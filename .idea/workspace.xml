@@ -8,8 +8,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" afterDir="false" />
+=======
+>>>>>>> ef1e07900ac6329b092fe871e827c43ea7603031
+=======
       <change beforePath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/controller/ViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserProject/src/main/java/org/nicolas/nicolasv2/entity/User.java" afterDir="false" />
+>>>>>>> e73c4de03a79e2504de72c27172a358d612425fd
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +32,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES" />
   </component>
   <component name="ProjectId" id="1rr6MoYbAbllYmtIDDt8I2sOyf9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />

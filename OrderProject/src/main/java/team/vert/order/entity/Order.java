@@ -21,10 +21,10 @@ public class Order {
     @Column
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Customer customer;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Item> items = new ArrayList<>();
 
     public void addItem(Item item) {

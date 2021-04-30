@@ -9,7 +9,7 @@
     <a th:href="@{http://localhost:8082/{id}/new-order(id=${customer.id})}"><button>Passer une nouvelle commande</button></a>
 
     <hr/>
-    <h2>Toutes vos commandes</h2>
+    <h2 th:utext="'Toutes vos commandes ' + ${customer.name}"></h2>
     <table th:if="${!orders.isEmpty()}">
         <tr>
             <th>Nom</th>

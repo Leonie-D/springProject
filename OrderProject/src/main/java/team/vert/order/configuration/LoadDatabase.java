@@ -29,24 +29,28 @@ public class LoadDatabase implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        Customer customer = new Customer(25, "Henry");
+        customerRepository.save(customer);
+
+        Item item1 = new Item(57, "robinet");
+        itemRepository.save(item1);
+        Item item2 = new Item(12, "vélo");
+        itemRepository.save(item2);
+        Item item3 = new Item(34, "fleur");
+        itemRepository.save(item3);
+
         Order order = new Order();
         order.setName("Test");
-        order.setCustomer(new Customer(2, "Henry"));
-        order.addItem(new Item(3, "robinet"));
-        order.addItem(new Item(12, "vélo"));
-        order.addItem(new Item(34, "fleur"));
+        order.setCustomer(customer);
+        order.addItem(item1);
+        order.addItem(item2);
+        order.addItem(item3);
         orderRepository.save(order);
 
         // importer les items
-        /*Item[] items = orderService.getItemsList();
-        for(int i = 0; i < items.length; i++) {
-            itemRepository.save(items[i]);
-        }*/
+        Item[] items = orderService.getItemsList();
 
         // importer les customers
-        /*Customer[] customers = orderService.getCustomersList();
-        for(int i = 0; i < customers.length; i++) {
-            customerRepository.save(customers[i]);
-        }*/
+        Customer[] customers = orderService.getCustomersList();
     }
 }

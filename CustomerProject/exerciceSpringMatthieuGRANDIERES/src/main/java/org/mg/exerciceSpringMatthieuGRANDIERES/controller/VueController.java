@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping
 public class VueController {
-
     @Autowired
     CustomerService customService;
 
@@ -25,5 +24,11 @@ public class VueController {
     public String view(Model model){
         model.addAttribute("customers", customService.getAllCustomer());
         return "view";
+    }
+
+    @GetMapping("/newcustomer")
+    public String addCustomer(Model model) {
+        model.addAttribute("customer", new Customer());
+        return "new-customer";
     }
 }

@@ -6,8 +6,9 @@
 </head>
 <body>
 
-    <h1>Une erreur est survenue</h1>
-    <p th:utext="${message}"></p>
-    <a th:href="@{http://localhost:8083/login}">Retour à la page de login</a>
+<h1>Une erreur est survenue</h1>
+<p th:utext="${message}"></p>
+<p th:utext="${trace}"></p>
+<a th:href="@{http://localhost:8083/login}">Retour à la page de login</a>
 </body>
 </html>

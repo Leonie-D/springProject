@@ -21,6 +21,12 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private ItemService itemService;
+
+    @Autowired
+    private CustomerService customerService;
+
     public Order getOrderById(int id) {
         Optional<Order> order = orderRepository.findById(id);
         if(order.isEmpty()) {
@@ -36,10 +42,16 @@ public class OrderService {
 
     public Item[] getItemsList() {
         String resourceUrl
-            = "http://localhost:8081"; // TODO update
+            = "http://localhost:8081/item";
         ResponseEntity<Item[]> response
                 = restTemplate.getForEntity(resourceUrl, Item[].class);
         if(response.getBody() != null) {
+
+            // save new items
+            for(int i = 0; i < response.getBody().length; i++) {
+                itemService.addItem(response.getBody()[i]);
+            }
+
             return response.getBody();
         } else {
             throw new NotFoundException("Une erreur est survenue");
@@ -48,10 +60,16 @@ public class OrderService {
 
     public Customer[] getCustomersList() throws NotFoundException {
         String resourceUrl
-                = "http://localhost:8080"; // TODO update
+                = "http://localhost:8083/user";
         ResponseEntity<Customer[]> response
                 = restTemplate.getForEntity(resourceUrl, Customer[].class);
         if(response.getBody() != null) {
+
+            // save new customers
+            for(int i = 0; i < response.getBody().length; i++) {
+                customerService.addCustomer(response.getBody()[i]);
+            }
+
             return response.getBody();
         } else {
             throw new NotFoundException("Une erreur est survenue");
@@ -60,7 +78,7 @@ public class OrderService {
 
     public Customer getCustomerDetails(int userId) throws NotFoundException {
         String resourceUrl
-                = "http://localhost:8083/userId";
+                = "http://localhost:8083/user/" + userId;
         ResponseEntity<Customer> response
                 = restTemplate.getForEntity(resourceUrl, Customer.class);
         if(response.getBody() != null) {

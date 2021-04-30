@@ -11,6 +11,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
+
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,19 +45,18 @@ public class CustomerController {
     }
 
     @PostMapping(path = "/customers/create")
-    public String createCustomer() {
+    public RedirectView createCustomer() {
+        RedirectView redirectView = new RedirectView();
         customService.getAllCustomer().add(customService.createCustomer());
-        return "User create";
+        redirectView.setUrl("http://localhost:8080/view");
+        return redirectView;
     }
 
-    /**@GetMapping(path="/customers/{zip}")
-    public Communes getZip(@PathVariable("zip") int zip) {
 
-        RestTemplate restTemplate = new RestTemplate();
-        Communes response
-                = restTemplate.getForObject("https://geo.api.gouv.fr/communes/"+zip, Communes.class);
-        System.out.println(response);
-        return response;
+    /*@PostMapping(path = "/customers/createCustomer")
+    public String createCustomerView(@RequestBody Customer newCustomer) {
+        customService.getAllCustomer().add(customService.createCustomerView());
+        return "redirect:/view";
+    }*/
 
-    }**/
 }
