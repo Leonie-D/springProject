@@ -1,5 +1,6 @@
 package org.mg.exerciceSpringMatthieuGRANDIERES.controller;
 
+import org.mg.exerciceSpringMatthieuGRANDIERES.entity.Customer;
 import org.mg.exerciceSpringMatthieuGRANDIERES.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -82,6 +82,8 @@ public class OrderService {
         ResponseEntity<Customer> response
                 = restTemplate.getForEntity(resourceUrl, Customer.class);
         if(response.getBody() != null) {
+            // save if new
+            customerService.addCustomer(response.getBody());
             return response.getBody();
         } else {
             throw new NotFoundException("L'utilisateur demandé n'existe pas");
