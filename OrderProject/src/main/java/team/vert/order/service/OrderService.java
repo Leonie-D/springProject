@@ -36,7 +36,7 @@ public class OrderService {
 
     public Item[] getItemsList() {
         String resourceUrl
-            = "http://localhost:8081"; // TODO update
+            = "http://localhost:8081/item";
         ResponseEntity<Item[]> response
                 = restTemplate.getForEntity(resourceUrl, Item[].class);
         if(response.getBody() != null) {
@@ -60,7 +60,7 @@ public class OrderService {
 
     public Customer getCustomerDetails(int userId) throws NotFoundException {
         String resourceUrl
-                = "http://localhost:8083/userId";
+                = "http://localhost:8083/user/" + userId;
         ResponseEntity<Customer> response
                 = restTemplate.getForEntity(resourceUrl, Customer.class);
         if(response.getBody() != null) {
