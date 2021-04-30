@@ -46,8 +46,9 @@ public class UserService {
     }*/
 
     public User addUser(User user) {
-        user.setCity(findCity(user.getZipCode()));
-        user.setDepartmentCode(findDept(user.getZipCode()));
+        //user.setCity(findCity(user.getZipCode()));
+        //user.setDepartmentCode(findDept(user.getZipCode()));
+        user.setName(user.getName());
         user.setPassword(user.getPassword());
         //success();
         return userRepo.save(user);

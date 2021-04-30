@@ -54,33 +54,12 @@ public class ViewController {
         return "redirect:http://localhost:8082/"+user.getId()+"/home";
     }
 
-    @GetMapping("/login")
+/*    @GetMapping("/login")
     public String viewLogin(Model model) {
         //model.addAttribute("user", UserService.getUser(id));
         return "login";
-    }
-
-/*    @GetMapping("/home")
-    public String viewHome(Model model) {
-        //model.addAttribute("user", UserService.getUser(id));
-        return "home";
     }*/
 
-/*    @PostMapping("/process_register")
-    public String processRegister(User user) {
-        String password = user.getPassword();
-        user.setPassword(password);
 
-        UserService.save(user);
-
-        return "register_success";
-    }*/
-
-/*    @GetMapping("/view")
-    public String view(Model model) {
-        model.addAttribute("users", UserService.getUsers());
-        model.addAttribute("newUsers", new User());
-        return "view";
-    }*/
 
 }
