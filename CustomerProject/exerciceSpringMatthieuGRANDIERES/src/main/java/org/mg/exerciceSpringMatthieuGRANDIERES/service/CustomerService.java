@@ -16,7 +16,7 @@ public class CustomerService {
         customersArray.add(new Customer(1, "Matthieu"));
         customersArray.add(new Customer(2, "Buzz"));
         customersArray.add(new Customer(3, "Woodie"));
-        customersArray.add(new Customer(4, "Michel Sardou"));
+        customersArray.add(new Customer(4, "Michel"));
     }
 
     public List<Customer> getAllCustomer(){
@@ -36,10 +36,10 @@ public class CustomerService {
         return new Customer(id, "New Customer");
     }
 
-    public void createCustomerView(Customer customer){
+    /*public void createCustomerView(Customer customer){
         int id = customersArray.size() + 1;
         return new Customer(id, name);
-    }
+    }*/
 
 
     /*public String searchZipCode(String zipCode){
