@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenue</title>
+</head>
+<body>
+
+    <a th:href="@{http://localhost:8082/{id}/new-order(id=${customer.id})}"><button>Passer une nouvelle commande</button></a>
+
+    <hr/>
+    <h2>Toutes vos commandes</h2>
+    <table th:if="${!orders.isEmpty()}">
+        <tr>
+            <th>Nom</th>
+            <th>Articles</th>
+        </tr>
+        <tr th:each="order : ${orders}">
+            <td><a th:href="@{http://localhost:8082/show-order/{id}(id=${order.id})}" th:utext="${order.name}"></a></td>
+            <td>
+                <ul>
+                    <li th:each="item : ${order.items}" th:utext="${item.name}"></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
