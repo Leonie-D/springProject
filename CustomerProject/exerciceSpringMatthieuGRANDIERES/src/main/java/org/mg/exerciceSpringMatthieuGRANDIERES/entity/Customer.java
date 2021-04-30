@@ -13,11 +13,6 @@ public class Customer {
         this.name = name;
     }
 
-    public Customer(int id, String name, String zipCode, String city) {
-        this.id = id;
-        this.name = name;
-
-    }
 
     public int getId() {
         return id;

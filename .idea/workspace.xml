@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fcffc3fa-12c8-47e0-967a-bd4d9f422ec1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/CustomerProject/exerciceSpringMatthieuGRANDIERES/src/main/resources/templates/view.html" afterDir="false" />
+=======
+>>>>>>> ef1e07900ac6329b092fe871e827c43ea7603031
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +38,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/UserProject" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">

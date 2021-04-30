@@ -1,0 +1,8 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<form action="#" th:action="@{/customers/createCustomer}" th:method="post" th:object="${customer}">
+    <input type="text" placeholder="Nom.." />
+    <button class="btn btn-success" type="submit" th:value="${customer.name}" />
+
+</form>
+</html>

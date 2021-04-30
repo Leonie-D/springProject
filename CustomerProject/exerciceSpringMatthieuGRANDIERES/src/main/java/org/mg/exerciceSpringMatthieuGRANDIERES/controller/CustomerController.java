@@ -47,14 +47,10 @@ public class CustomerController {
         return "User create";
     }
 
-    /**@GetMapping(path="/customers/{zip}")
-    public Communes getZip(@PathVariable("zip") int zip) {
+    @PostMapping(path = "/customers/createCustomer")
+    public String createCustomerView(@RequestBody Customer newCustomer) {
+        customService.getAllCustomer().add(customService.createCustomerView());
+        return "redirect:/view";
+    }
 
-        RestTemplate restTemplate = new RestTemplate();
-        Communes response
-                = restTemplate.getForObject("https://geo.api.gouv.fr/communes/"+zip, Communes.class);
-        System.out.println(response);
-        return response;
-
-    }**/
 }

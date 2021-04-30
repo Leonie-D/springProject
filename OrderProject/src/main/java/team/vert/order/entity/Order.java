@@ -21,15 +21,6 @@ public class Order {
     @Column
     private String name;
 
-    @Column
-    private String city;
-
-    @Column
-    private Integer lattitude;
-
-    @Column
-    private Integer longitude;
-
     @ManyToOne
     private Customer customer;
 }

@@ -36,6 +36,12 @@ public class CustomerService {
         return new Customer(id, "New Customer");
     }
 
+    public void createCustomerView(Customer customer){
+        int id = customersArray.size() + 1;
+        return new Customer(id, name);
+    }
+
+
     /*public String searchZipCode(String zipCode){
         String request = "https://geo.api.gouv.fr/communes?codePostal=" + zipCode + "";
         return request;
