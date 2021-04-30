@@ -1,22 +1,18 @@
 package team.vert.order.dto;
 
-import team.vert.order.entity.Customer;
-
-import javax.persistence.Column;
-import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDTO {
     private Long id;
     private String name;
-    private String city;
-    private List<Customer> customers = new ArrayList<>();
+    private CustomerDTO customer;
+    private List<ItemDTO> items = new ArrayList<ItemDTO>();
 
-    public OrderDTO(Long id, String name, String city, List<Customer> customers) {
+    public OrderDTO(Long id, String name, CustomerDTO customer, List<ItemDTO> items) {
         this.id = id;
         this.name = name;
-        this.city = city;
-        this.customers = customers;
+        this.customer = customer;
+        this.items = items;
     }
 }
