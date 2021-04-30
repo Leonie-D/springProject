@@ -10,6 +10,7 @@ import team.vert.order.entity.Item;
 import team.vert.order.entity.Order;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderService {
@@ -19,7 +20,16 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public List<Order> getOrdersByCustomer(Long customerId) {
+    public Order getOrderById(int id) {
+        Optional<Order> order = orderRepository.findById(id);
+        if(order.isEmpty()) {
+            return null;
+        } else {
+            return order.get();
+        }
+    }
+
+    public List<Order> getOrdersByCustomer(int customerId) {
         return orderRepository.findByCustomerId(customerId);
     }
 
@@ -36,6 +46,14 @@ public class OrderService {
                 = "http://localhost:8080"; // TODO update
         ResponseEntity<Customer[]> response
                 = restTemplate.getForEntity(resourceUrl, Customer[].class);
+        return response.getBody();
+    }
+
+    public Customer getCustomerDetails(int userId) {
+        String resourceUrl
+                = "http://localhost:8080"; // TODO update
+        ResponseEntity<Customer> response
+                = restTemplate.getForEntity(resourceUrl, Customer.class);
         return response.getBody();
     }
 }

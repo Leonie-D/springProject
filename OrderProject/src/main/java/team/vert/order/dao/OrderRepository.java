@@ -7,8 +7,8 @@ import team.vert.order.entity.Order;
 import java.util.List;
 
 @Repository
-public interface OrderRepository extends JpaRepository<Order, Long> {
+public interface OrderRepository extends JpaRepository<Order, Integer> {
 
-    public List<Order> findByCustomerId(Long customerId);
+    public List<Order> findByCustomerId(int customerId);
 
 }

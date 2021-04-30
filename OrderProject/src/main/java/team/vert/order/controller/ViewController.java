@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import team.vert.order.entity.Customer;
 import team.vert.order.entity.Item;
 import team.vert.order.entity.Order;
 import team.vert.order.service.OrderService;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,23 +21,29 @@ public class ViewController {
     private OrderService orderService;
 
     @GetMapping(path = "{userId}/home")
-    public String index(Model model, @PathVariable Long userId) {
-        List<Order> orders = orderService.getOrdersByCustomer(userId);
-        model.addAttribute("orders", orders);
+    public String index(Model model, @PathVariable int userId) {
+        model.addAttribute("customer", orderService.getCustomerDetails(userId));
+        model.addAttribute("orders", orderService.getOrdersByCustomer(userId));
         return "home";
     }
 
-    @GetMapping(path = "/new-order")
-    public String newOrderForm(Model model) {
-        model.addAttribute("user", "truc"); // TODO
-        List<Item> items = Arrays.asList(orderService.getItemsList());
-        model.addAttribute("items", items);
+    @GetMapping(path = "{userId}/new-order")
+    public String newOrderForm(Model model, @PathVariable int userId) {
+        model.addAttribute("customer", orderService.getCustomerDetails(userId));
+        model.addAttribute("items", Arrays.asList(orderService.getItemsList()));
         model.addAttribute("order", new Order());
         return "newOrder";
     }
 
-    @PostMapping(path = "/create")
-    public String create(@ModelAttribute Order order) {
-        return "redirect:/home";
+    @GetMapping(path = "show-order/{id}")
+    public String showOrder(Model model, @PathVariable int id) {
+        model.addAttribute("order", orderService.getOrderById(id));
+        return "showOrder";
+    }
+
+    @PostMapping(path = "{userId}/create-order")
+    public String create(@ModelAttribute Order order, @PathVariable int userId) {
+        //TODO
+        return "redirect:/" + userId + "/home";
     }
 }
