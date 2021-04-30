@@ -13,7 +13,6 @@ import team.vert.order.entity.Order;
 import team.vert.order.service.OrderService;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Controller
 public class ViewController {
@@ -43,7 +42,7 @@ public class ViewController {
 
     @PostMapping(path = "{userId}/create-order")
     public String create(@ModelAttribute Order order, @PathVariable int userId) {
-        //TODO
+        orderService.addOrder(order, userId);
         return "redirect:/" + userId + "/home";
     }
 }

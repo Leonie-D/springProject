@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+import team.vert.order.NotFoundException;
 import team.vert.order.dao.OrderRepository;
 import team.vert.order.entity.Customer;
 import team.vert.order.entity.Item;
@@ -38,22 +39,40 @@ public class OrderService {
             = "http://localhost:8081"; // TODO update
         ResponseEntity<Item[]> response
                 = restTemplate.getForEntity(resourceUrl, Item[].class);
-        return response.getBody();
+        if(response.getBody() != null) {
+            return response.getBody();
+        } else {
+            throw new NotFoundException("Une erreur est survenue");
+        }
     }
 
-    public Customer[] getCustomersList() {
+    public Customer[] getCustomersList() throws NotFoundException {
         String resourceUrl
                 = "http://localhost:8080"; // TODO update
         ResponseEntity<Customer[]> response
                 = restTemplate.getForEntity(resourceUrl, Customer[].class);
-        return response.getBody();
+        if(response.getBody() != null) {
+            return response.getBody();
+        } else {
+            throw new NotFoundException("Une erreur est survenue");
+        }
     }
 
-    public Customer getCustomerDetails(int userId) {
+    public Customer getCustomerDetails(int userId) throws NotFoundException {
         String resourceUrl
-                = "http://localhost:8080"; // TODO update
+                = "http://localhost:8083/userId";
         ResponseEntity<Customer> response
                 = restTemplate.getForEntity(resourceUrl, Customer.class);
-        return response.getBody();
+        if(response.getBody() != null) {
+            return response.getBody();
+        } else {
+            throw new NotFoundException("L'utilisateur demandé n'existe pas");
+        }
+    }
+
+    public void addOrder(Order order, int userId) {
+        Customer customer = this.getCustomerDetails(userId);
+        order.setCustomer(customer);
+        orderRepository.save(order);
     }
 }

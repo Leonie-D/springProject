@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oups...</title>
+</head>
+<body>
+
+    <h1>Une erreur est survenue</h1>
+    <p th:utext="${message}"></p>
+    <a th:href="@{http://localhost:8083/login}">Retour à la page de login</a>
+</body>
+</html>

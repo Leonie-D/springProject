@@ -14,7 +14,7 @@
 
         <label for="items">Client</label>
         <select name="items" id="items" multiple>
-            <option th:each="item : ${items}" th:value="${item.id}" th:utext="${item.name}"></option>
+            <option th:each="item : ${items}" th:value="${item}" th:utext="${item.name}"></option>
         </select>
         <input type="submit" value="Ajouter"/>
     </form>
