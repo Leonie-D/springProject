@@ -1,11 +1,25 @@
 package team.vert.order.entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-public class Customer {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Item")
+@NoArgsConstructor
+public class Item {
+    @Id
     private Long id;
+
+    @Column
     private String name;
+
+    public Item(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Long getId() {
         return id;

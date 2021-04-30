@@ -21,6 +21,9 @@ public class Order {
     @Column
     private String name;
 
-    @ManyToOne
-    private Customer customer;
+    @Column
+    private Long customerId;
+
+    @OneToMany
+    private List<Item> items;
 }

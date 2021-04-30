@@ -5,7 +5,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import team.vert.order.dao.OrderRepository;
-import team.vert.order.dto.ItemDTO;
+import team.vert.order.entity.Item;
+import team.vert.order.entity.Order;
 
 import java.util.List;
 
@@ -17,11 +18,15 @@ public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
 
-    public ItemDTO[] getItemsList() {
+    public List<Order> getOrdersByCustomer(Long customerId) {
+        return orderRepository.findByCustomerId(customerId);
+    }
+
+    public Item[] getItemsList() {
         String resourceUrl
             = "http://localhost:8081"; // TODO update
-        ResponseEntity<ItemDTO[]> response
-                = restTemplate.getForEntity(resourceUrl, ItemDTO[].class);
+        ResponseEntity<Item[]> response
+                = restTemplate.getForEntity(resourceUrl, Item[].class);
         return response.getBody();
     }
 }
